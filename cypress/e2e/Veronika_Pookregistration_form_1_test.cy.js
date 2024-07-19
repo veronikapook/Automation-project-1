@@ -3,25 +3,15 @@ beforeEach(() => {
     cy.visit('cypress/fixtures/registration_form_1.html')
 })
 
-/*
-Assignment 2:
 
- 1. Update the name of test suite by adding you name: “This is first test suite, John Smith”
- 2. Replace text ‘Password123’ in the first test with your own chosen password (2 places) - passwords should match
- 3. Change phone number in the first test to 555666777
- 4. Change the order of steps in the first test:
-      -first set phone number
-      -then 2 password fields
-      -then username
- 5. Add comment to the first test containing today’s date
- */
-
-describe('This is first test suite', () => {
+describe('This is first test suite, Veronika Pook', () => {
+    /*Today's date is 04/07/24
     it('User can submit data only when valid mandatory values are added', () => {
+        cy.get('[data-testid="phoneNumberTestId"]').type('555666777')
+        cy.get('input[name="password"]').type('MyOnlyPassword')
+        cy.get('[name="confirm"]').type('MyOnlyPassword')
         cy.get('#username').type('Something')
-        cy.get('[data-testid="phoneNumberTestId"]').type('5656565656')
-        cy.get('input[name="password"]').type('Password123')
-        cy.get('[name="confirm"]').type('Password123')
+
 
         //in order to activate submit button, user has to click somewhere outside the input field
         cy.get('h2').contains('Password').click()
